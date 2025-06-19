@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marieva Barrios</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4F46E5',secondary:'#F59E0B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.masonry-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 12px;
+}
+.masonry-item:nth-child(3n+1) {
+grid-row: span 2;
+}
+.project-detail {
+transform: translateY(100%);
+transition: transform 0.3s ease-out;
+}
+.project-detail.show {
+transform: translateY(0);
+}
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.no-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+.animate-fadeInUp {
+animation: fadeInUp 0.6s ease-out forwards;
+opacity: 0;
+}
+.animate-fadeIn {
+animation: fadeIn 0.6s ease-out forwards;
+opacity: 0;
+}
+.delay-200 {
+animation-delay: 0.2s;
+}
+.delay-400 {
+animation-delay: 0.4s;
+}
+.delay-600 {
+animation-delay: 0.6s;
+}
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Categories -->
+<div class="fixed top-0 w-full h-screen z-30 overflow-hidden">
+<div class="relative h-full flex items-center justify-center">
+<div class="absolute inset-0 z-0 bg-white">
+<img src="https://readdy.ai/api/search-image?query=abstract%20light%20minimalist%20workspace%20with%20geometric%20shapes%20and%20subtle%20lighting%2C%20clean%20creative%20environment%20with%20soft%20shadows%2C%20professional%20light%20aesthetic&width=800&height=600&seq=header_bg_light&orientation=landscape" alt="Designer Workspace" class="w-full h-full object-cover opacity-10">
+<div class="absolute bottom-6 w-full text-center">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/3f5c1864d1dc97a97353333606d1092f.png" alt="Logo" class="w-8 h-auto mx-auto mb-1">
+<p class="text-xs text-black opacity-50">contacto: marievabama@gmail.com</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-32">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/6d4c9b2338c7fd43ade48aad84c52ebd.png" alt="Marieva Barrios" class="w-64 mb-3 animate-fadeInUp delay-200">
+<button id="showPortfolio" class="bg-black text-white px-8 py-2.5 !rounded-button font-medium hover:bg-gray-800 transition-colors flex items-center gap-2 mx-auto mb-8 animate-fadeInUp delay-600">
+<span>Trabajos</span>
+<i class="ri-arrow-right-line"></i>
+</button>
+<div class="flex items-center justify-center gap-6 animate-fadeIn delay-600">
+<a href="https://www.instagram.com/marievadesing/" class="w-10 h-10 flex items-center justify-center text-black hover:text-gray-600 transition-colors">
+<i class="ri-instagram-line ri-xl"></i>
+</a>
+</div>
+</div>
+</div>
+<div id="portfolioSection" class="fixed inset-0 bg-white z-50 overflow-y-auto project-detail" style="transform: translateY(100%);">
+<div class="relative min-h-screen pb-20">
+<div class="sticky top-0 bg-white z-10 px-4 py-3 flex items-center justify-between border-b">
+<button id="closePortfolio" class="w-10 h-10 flex items-center justify-center cursor-pointer !rounded-button">
+<i class="ri-arrow-left-line ri-lg"></i>
+</button>
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/4f532cb82d133c6fe208012c0b5eceae.png" alt="Portfolio" class="h-12">
+<div class="w-10"></div>
+</div>
+<div class="px-4 md:px-8 lg:px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5 portfolio-grid max-w-7xl mx-auto">
+<div class="project-card cursor-pointer" data-category="Branding" data-project="1">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white h-full flex flex-col">
+<div class="aspect-[4/3] overflow-hidden max-w-[320px]">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/26c639b82f5587f58f5d66a354727094.jpeg" alt="Branding Project" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-medium text-sm mb-1 line-clamp-2">Molinón Sound (Trabajo final de grado)</h3>
+<p class="text-xs text-gray-500">Branding</p>
+</div>
+</div>
+</div>
+</div>
+<div class="project-card cursor-pointer" data-category="Branding" data-project="2">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white h-full flex flex-col">
+<div class="aspect-[4/3] overflow-hidden">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/2244d98c7408daa24a6d12ff9640d577.png" alt="UI/UX Project" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-medium text-sm mb-1 line-clamp-2">Águila o Sol</h3>
+<p class="text-xs text-gray-500">Branding</p>
+</div>
+</div>
+</div>
+</div>
+<div class="project-card cursor-pointer" data-category="Print Design" data-project="3">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white h-full flex flex-col">
+<div class="aspect-[4/3] overflow-hidden">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/b5ff7e316cf4a92eef5098598935f851.png" alt="Editorial Project" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-medium text-sm mb-1 line-clamp-2">Rollerzone Spain</h3>
+<p class="text-xs text-gray-500">Editorial</p>
+</div>
+</div>
+</div>
+</div>
+<div class="project-card cursor-pointer" data-category="Packaging" data-project="5">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/1b7a102753e0449b6f0f6d99b43bb2cd.png" alt="Packaging Project" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">Carta para La Fueya de Tomás</h3>
+<p class="text-xs text-gray-500">Editorial</p>
+</div>
+</div>
+</div>
+<div class="project-card cursor-pointer" data-category="Digital Design" data-project="6">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/0e4f05d6665fdd54c440ea311d7e9ab0.png" alt="Digital Project" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">Cartel para la Marcha Popular en Patines</h3>
+<p class="text-xs text-gray-500">Carteleria</p>
+</div>
+</div>
+</div>
+<div class="project-card cursor-pointer" data-category="Illustration" data-project="4">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/bfa3a58290d3537534179e6ded053cb0.png" alt="Illustration Project" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">Cartel Regata Isastur</h3>
+<p class="text-xs text-gray-500">Carteleria</p>
+</div>
+</div>
+</div>
+<div class="project-card cursor-pointer" data-category="Digital Design" data-project="13">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/51db6711fa3cecc10b27437248273540.png" alt="Fitness App UI" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">Logotipo 50 aniversario FUSBA</h3>
+<p class="text-xs text-gray-500">Branding</p>
+</div>
+</div>
+</div>
+<div class="project-card cursor-pointer" data-category="Branding" data-project="14">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/8443d1131a90ae378d502eeea15a5847.png" alt="Logotipo 50 aniversario HUSA" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">Logotipo 50 aniversario HUSA</h3>
+<p class="text-xs text-gray-500">Branding</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="fixed top-0 left-0 w-full h-screen px-4 py-12 overflow-hidden">
+<div class="mb-6">
+<div class="grid grid-cols-2 gap-4">
+<!-- Project 8 -->
+<div class="masonry-item cursor-pointer" data-project="8">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://readdy.ai/api/search-image?query=social%20media%20campaign%20design%20with%20multiple%20post%20templates%20and%20consistent%20branding%20elements%2C%20instagram%20marketing%20materials%2C%20professional%20graphic%20design%20portfolio%20piece&width=400&height=300&seq=project8thumb&orientation=landscape" alt="Organic Foods Campaign" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">Organic Foods Campaign</h3>
+<p class="text-xs text-gray-500">Digital Design</p>
+</div>
+</div>
+</div>
+<!-- Project 9 -->
+<div class="masonry-item cursor-pointer" data-project="9">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://readdy.ai/api/search-image?query=3D%20product%20visualization%20for%20tech%20gadget%2C%20sleek%20modern%20smartwatch%20render%20on%20minimal%20background%2C%20professional%20product%20design%20portfolio%20piece&width=400&height=300&seq=project9thumb&orientation=landscape" alt="TechWear Smart Watch" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">TechWear Smart Watch</h3>
+<p class="text-xs text-gray-500">3D Design</p>
+</div>
+</div>
+</div>
+<!-- Project 10 -->
+<div class="masonry-item cursor-pointer" data-project="10">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://readdy.ai/api/search-image?query=motion%20graphics%20design%20frames%20showing%20animated%20logo%20sequence%2C%20dynamic%20typography%20animation%20keyframes%2C%20professional%20motion%20design%20portfolio%20piece&width=400&height=300&seq=project10thumb&orientation=landscape" alt="Kinetic Typography Reel" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">Kinetic Typography Reel</h3>
+<p class="text-xs text-gray-500">Motion Design</p>
+</div>
+</div>
+</div>
+<!-- Project 12 -->
+<div class="masonry-item cursor-pointer" data-project="12">
+<div class="relative rounded-lg overflow-hidden shadow-sm bg-white">
+<img src="https://readdy.ai/api/search-image?query=icon%20set%20design%20with%20consistent%20style%20showing%20app%20icons%20and%20UI%20elements%2C%20colorful%20modern%20icon%20design%20system%2C%20professional%20graphic%20design%20portfolio%20piece&width=400&height=300&seq=project12thumb&orientation=landscape" alt="Icon Design System" class="w-full h-40 object-cover">
+<div class="p-3">
+<h3 class="font-medium text-sm">Icon Design System</h3>
+<p class="text-xs text-gray-500">UI Design</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<!-- Restaurant Detail View (Hidden by default) -->
+<div id="restaurantDetail" class="fixed inset-0 bg-white z-50 overflow-y-auto project-detail">
+<div class="relative min-h-screen pb-20">
+<!-- Detail Header -->
+<div class="sticky top-0 bg-white z-10 px-4 py-3 flex items-center justify-between border-b">
+<button id="closeDetail" class="w-10 h-10 flex items-center justify-center cursor-pointer !rounded-button">
+<i class="ri-arrow-left-line ri-lg"></i>
+</button>
+<h2 class="font-medium">Detalles del Proyecto</h2>
+<div class="flex items-center gap-3">
+<button id="detailLikeBtn" class="w-10 h-10 flex items-center justify-center cursor-pointer !rounded-button" data-liked="false">
+<i class="ri-heart-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Project Content -->
+<div class="px-4 py-5">
+<div id="detailContent">
+<!-- El contenido se poblará dinámicamente -->
+</div>
+</div>
+</div>
+</div>
+<!-- Search Toggle Script -->
+<script id="searchToggleScript">
+document.addEventListener('DOMContentLoaded', function() {
+const searchBtn = document.getElementById('searchBtn');
+const searchBar = document.getElementById('searchBar');
+if (searchBtn && searchBar) {
+searchBtn.addEventListener('click', function() {
+searchBar.classList.toggle('hidden');
+});
+}
+const showPortfolioBtn = document.getElementById('showPortfolio');
+const portfolioSection = document.getElementById('portfolioSection');
+const closePortfolioBtn = document.getElementById('closePortfolio');
+if (showPortfolioBtn && portfolioSection) {
+showPortfolioBtn.addEventListener('click', function() {
+portfolioSection.style.transition = 'transform 0.3s ease-out';
+portfolioSection.style.transform = 'translateY(0)';
+});
+}
+if (closePortfolioBtn && portfolioSection) {
+closePortfolioBtn.addEventListener('click', function() {
+portfolioSection.style.transform = 'translateY(100%)';
+});
+}
+const categoryFilters = document.querySelectorAll('.category-filter');
+const projectCards = document.querySelectorAll('.project-card');
+categoryFilters.forEach(filter => {
+filter.addEventListener('click', function() {
+const category = this.getAttribute('data-category');
+categoryFilters.forEach(f => f.classList.remove('active', 'bg-primary', 'text-white'));
+this.classList.add('active', 'bg-primary', 'text-white');
+projectCards.forEach(card => {
+if (category === 'all' || card.getAttribute('data-category') === category) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+});
+});
+});
+</script>
+<!-- Like Button Script -->
+<script id="likeButtonScript">
+document.addEventListener('DOMContentLoaded', function() {
+const likeButtons = document.querySelectorAll('.like-btn');
+likeButtons.forEach(button => {
+button.addEventListener('click', function(e) {
+e.stopPropagation();
+const isLiked = button.getAttribute('data-liked') === 'true';
+if (isLiked) {
+button.innerHTML = '<i class="ri-heart-line"></i>';
+button.setAttribute('data-liked', 'false');
+} else {
+button.innerHTML = '<i class="ri-heart-fill text-red-500"></i>';
+button.setAttribute('data-liked', 'true');
+}
+});
+});
+const detailLikeBtn = document.getElementById('detailLikeBtn');
+if (detailLikeBtn) {
+detailLikeBtn.addEventListener('click', function() {
+const isLiked = detailLikeBtn.getAttribute('data-liked') === 'true';
+if (isLiked) {
+detailLikeBtn.innerHTML = '<i class="ri-heart-line ri-lg"></i>';
+detailLikeBtn.setAttribute('data-liked', 'false');
+} else {
+detailLikeBtn.innerHTML = '<i class="ri-heart-fill ri-lg text-red-500"></i>';
+detailLikeBtn.setAttribute('data-liked', 'true');
+}
+});
+}
+});
+</script>
+<!-- Project Detail Script -->
+<script id="projectDetailScript">
+document.addEventListener('DOMContentLoaded', function() {
+const projectItems = document.querySelectorAll('.project-card');
+const projectDetail = document.getElementById('restaurantDetail');
+const closeDetail = document.getElementById('closeDetail');
+const detailContent = document.getElementById('detailContent');
+// Project data
+const projectData = {
+13: {
+title: "Fitness App UI",
+category: "UI/UX Design",
+client: "FUSBA",
+views: 156,
+description: "A modern and intuitive UI design for a fitness tracking application. The project focused on creating clean, user-friendly interfaces for tracking workouts, nutrition, and health metrics with emphasis on data visualization.",
+tools: "Adobe Illustrator",
+testimonial: "The UI design significantly improved our user engagement. App usage increased by 40% and user retention improved by 35% after launch.",
+images: [
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/65a7c69f16522f37190d78cf46ef4925.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/51db6711fa3cecc10b27437248273540.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/8bb49fd271d4c7cd1233dfed2d43b716.png"
+]
+},
+14: {
+title: "HUSA",
+category: "Branding",
+client: "HUSA",
+views: 189,
+description: "Complete brand identity design for an eco-friendly cosmetics brand. The project included logo design, packaging, and brand guidelines with a focus on sustainable and natural elements.",
+tools: "Adobe Illustrator, Photoshop, InDesign",
+testimonial: "The branding perfectly captured our commitment to sustainability while maintaining a premium feel. Market response has been overwhelmingly positive.",
+images: [
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/459f1834ef35e2ab7e15e8f5709f096d.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/8443d1131a90ae378d502eeea15a5847.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/421b2b816b9c1cb6286c19101beec07a.png"
+]
+},
+9: {
+title: "TechWear Smart Watch",
+category: "3D Design",
+client: "TechWear Industries",
+views: 234,
+description: "A series of 3D product visualizations for a next-generation smartwatch. The project included product renders from multiple angles, feature highlights, and promotional imagery for marketing materials.",
+tools: "Cinema 4D, Octane Render, Adobe Photoshop",
+testimonial: "The 3D visualizations helped us secure pre-launch orders exceeding our targets by 150%. The attention to detail and realistic renders were crucial in communicating our product's premium positioning.",
+images: [
+"https://readdy.ai/api/search-image?query=3D%20product%20visualization%20for%20tech%20gadget%2C%20sleek%20modern%20smartwatch%20render%20on%20minimal%20background%2C%20professional%20product%20design%20portfolio%20piece&width=800&height=600&seq=project9detail1&orientation=landscape",
+"https://readdy.ai/api/search-image?query=smartwatch%203D%20render%20showing%20multiple%20angles%20and%20features%2C%20product%20visualization%20on%20clean%20background%2C%20professional%20product%20design%20portfolio%20piece&width=800&height=600&seq=project9detail2&orientation=landscape",
+"https://readdy.ai/api/search-image?query=technical%20breakdown%203D%20render%20of%20smartwatch%20components%20and%20features%2C%20exploded%20view%20visualization%2C%20professional%20product%20design%20portfolio%20piece&width=800&height=600&seq=project9detail3&orientation=landscape"
+]
+},
+10: {
+title: "Kinetic Typography Reel",
+category: "Motion Design",
+client: "Personal Project",
+views: 189,
+description: "A motion graphics showreel featuring dynamic typography animations and logo reveals. The project showcases various animation techniques and transitions using kinetic typography.",
+tools: "Adobe After Effects, Cinema 4D, Adobe Illustrator",
+testimonial: "",
+images: [
+"https://readdy.ai/api/search-image?query=motion%20graphics%20design%20frames%20showing%20animated%20logo%20sequence%2C%20dynamic%20typography%20animation%20keyframes%2C%20professional%20motion%20design%20portfolio%20piece&width=800&height=600&seq=project10detail1&orientation=landscape",
+"https://readdy.ai/api/search-image?query=kinetic%20typography%20design%20frames%20showing%20text%20animation%20sequence%2C%20motion%20graphics%20storyboard%2C%20professional%20motion%20design%20portfolio%20piece&width=800&height=600&seq=project10detail2&orientation=landscape",
+"https://readdy.ai/api/search-image?query=motion%20graphics%20project%20breakdown%20showing%20animation%20process%20and%20techniques%2C%20professional%20motion%20design%20portfolio%20piece&width=800&height=600&seq=project10detail3&orientation=landscape"
+]
+},
+12: {
+title: "Icon Design System",
+category: "UI Design",
+client: "Tech Startup Hub",
+views: 198,
+description: "A comprehensive icon design system for a technology startup platform. The project included creating over 100 consistent icons for various interface elements and app features.",
+tools: "Adobe Illustrator, Figma",
+testimonial: "The icon system has become an integral part of our platform's visual language. It has significantly improved our user interface consistency and recognition.",
+images: [
+"https://readdy.ai/api/search-image?query=icon%20set%20design%20with%20consistent%20style%20showing%20app%20icons%20and%20UI%20elements%2C%20colorful%20modern%20icon%20design%20system%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project12detail1&orientation=landscape",
+"https://readdy.ai/api/search-image?query=icon%20design%20guidelines%20showing%20grid%20system%20and%20construction%20principles%2C%20icon%20design%20process%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project12detail2&orientation=landscape",
+"https://readdy.ai/api/search-image?query=icon%20design%20application%20examples%20in%20user%20interface%20contexts%2C%20showing%20how%20icons%20are%20used%20in%20apps%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project12detail3&orientation=landscape"
+]
+},
+1: {
+title: "Molinón sound",
+category: "Branding",
+client: "Molinón Sound",
+views: 248,
+description: "Projecto final de grado en el cual se desarrolla la identidad de marca y las aplicaciones de un festival de música internacional en El Molinón",
+tools: "Adobe Illustrator, Photoshop, InDesign",
+testimonial: "The rebrand perfectly captured our artisanal approach while giving us a modern edge in a competitive market. Sales increased by 32% in the first quarter after launch.",
+images: [
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/e314e021d470c62a949b21da2cf0f248.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/f396c9960576af6e72425e060a8a7e07.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/c9b4ff8658a2f52a798ba15bf39d4d42.png"
+]
+},
+2: {
+title: "Águila o Sol",
+category: "UI/UX",
+client: "Águila o Sol",
+views: 187,
+description: "A comprehensive UI design for a fitness tracking application. The project focused on creating an intuitive user experience with clean, accessible interfaces for tracking workouts, nutrition, and progress.",
+tools: "Illustrator, Indesing, Visual Studio",
+testimonial: "The UI design significantly improved our user engagement metrics. Session duration increased by 45% and our user retention rate improved by 28%.",
+images: [
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/2c51dd4db123087724eab50ee9b1c4df.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/107dadc2e0dfaef77b5b5dcbf74d747e.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/ef40b3bc8806df1656f191c4eba69c2b.png"
+]
+},
+3: {
+title: "Rollerzone Spain",
+category: "Print Design",
+client: "Rollerzone Spain",
+views: 321,
+description: "Editorial design for a special fashion issue featuring avant-garde designers. The project included layout design, typography selection, and art direction for the photoshoot.",
+tools: "Adobe InDesign, Photoshop, Illustrator",
+testimonial: "The editorial design perfectly complemented our vision for the special issue. The innovative layouts enhanced the visual storytelling and received praise from both readers and industry professionals.",
+images: [
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/73ec923e86bb71f790ca01ef4a25b53e.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/bf5bc39dbd717c3dd893de14956f593b.png"
+]
+},
+4: {
+title: "Regata Isastur",
+category: "Illustration",
+client: "Real Club De Regatas & Isastur",
+views: 156,
+description: "A series of digital illustrations exploring surreal landscapes and dreamlike scenarios. The project was a personal exploration of color theory and composition in digital art.",
+tools: "Adobe Illustrator",
+testimonial: "",
+images: [
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/bfa3a58290d3537534179e6ded053cb0.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/54816f9eb619ad8b707b49ecd8229c3d.jpeg",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/2647da98426512ebacd11ecf2cc871ae.jpeg"
+]
+},
+5: {
+title: "La Fueya de Tomás",
+category: "Packaging",
+client: "La Fueya de Tomás",
+views: 203,
+description: "Premium packaging design for a luxury skincare line. The project included product packaging, boxes, and promotional materials with gold foil detailing and embossing.",
+tools: "Adobe Illustrator, Photoshop, Indesign",
+testimonial: "The packaging design elevated our brand positioning in the luxury market. The elegant aesthetic and attention to detail perfectly aligned with our premium product offering.",
+images: [
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/149d8cc1b24076d0e2f70e9c99fe1c4f.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/99045e3b41ba1ad8ae5a3b80c3608a3c.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/850e4872d985e483311921c105183650.png"
+]
+},
+6: {
+title: "Marcha Popular en Patines",
+category: "Digital Design",
+client: "Marcha Popular en Patines",
+views: 278,
+description: "A responsive website design for a creative agency. The project focused on showcasing the agency's portfolio with interactive elements and smooth animations.",
+tools: "Adobe Illustrator",
+testimonial: "The website design perfectly represents our creative approach and has significantly improved our conversion rate for potential clients visiting the site.",
+images: [
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/0e4f05d6665fdd54c440ea311d7e9ab0.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/e22e5f7f49e67c8ce2544e7633e02a1d.png",
+"https://static.readdy.ai/image/dab9b96aba162d6445e7c56ae955cb6e/374aea559e57d0901d55ba83df0430b1.png"
+]
+},
+7: {
+title: "Echo Music Festival",
+category: "Print Design",
+client: "Echo Entertainment",
+views: 192,
+description: "Event branding and promotional materials for a three-day music festival. The project included posters, tickets, wristbands, and digital assets for social media.",
+tools: "Adobe Illustrator, InDesign, Photoshop",
+testimonial: "The festival branding created a cohesive visual identity that resonated with our target audience. Ticket sales exceeded our expectations by 40%.",
+images: [
+"https://readdy.ai/api/search-image?query=creative%20event%20poster%20design%20with%20bold%20typography%20and%20geometric%20elements%2C%20music%20festival%20promotional%20material%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project7detail1&orientation=landscape",
+"https://readdy.ai/api/search-image?query=music%20festival%20branding%20showing%20tickets%2C%20wristbands%2C%20and%20promotional%20items%20with%20consistent%20design%20elements%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project7detail2&orientation=landscape",
+"https://readdy.ai/api/search-image?query=music%20festival%20stage%20design%20and%20environmental%20graphics%20mockup%20showing%20how%20the%20branding%20is%20applied%20to%20the%20venue%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project7detail3&orientation=landscape"
+]
+},
+8: {
+title: "Organic Foods Campaign",
+category: "Digital Design",
+client: "Nature's Harvest",
+views: 167,
+description: "A social media campaign for an organic food brand. The project included template designs for Instagram, Facebook, and Twitter with a consistent visual language.",
+tools: "Adobe Photoshop, Illustrator, After Effects",
+testimonial: "The social media campaign increased our engagement by 78% and helped us reach a wider audience. The consistent visual identity strengthened our brand recognition.",
+images: [
+"https://readdy.ai/api/search-image?query=social%20media%20campaign%20design%20with%20multiple%20post%20templates%20and%20consistent%20branding%20elements%2C%20instagram%20marketing%20materials%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project8detail1&orientation=landscape",
+"https://readdy.ai/api/search-image?query=organic%20food%20product%20photography%20styled%20for%20social%20media%20with%20bright%2C%20clean%20aesthetic%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project8detail2&orientation=landscape",
+"https://readdy.ai/api/search-image?query=social%20media%20strategy%20document%20showing%20content%20calendar%2C%20target%20audience%20analysis%2C%20and%20campaign%20metrics%2C%20professional%20graphic%20design%20portfolio%20piece&width=800&height=600&seq=project8detail3&orientation=landscape"
+]
+}
+};
+projectItems.forEach(item => {
+item.addEventListener('click', function() {
+const projectId = this.getAttribute('data-project');
+const project = projectData[projectId];
+if (project) {
+// Populate detail view
+let html = `
+<h1 class="text-2xl font-semibold mb-2">${project.title === 'Fitness App UI' ? 'FUSBA' : project.title}</h1>
+<div class="flex items-center gap-2 mb-4">
+<span class="px-3 py-1 bg-primary text-white text-sm rounded-full">Branding</span>
+</div>
+<div class="mb-6">
+${project.images.map(img => `
+<div class="mb-4 rounded-lg overflow-hidden shadow-sm">
+<img src="${img}" alt="${project.title}" class="w-full h-auto">
+</div>
+`).join('')}
+</div>
+<div class="bg-gray-50 p-4 rounded-lg mb-6">
+<h2 class="text-lg font-medium mb-2">Detalles del Proyecto</h2>
+<div class="grid grid-cols-1 gap-4 text-sm">
+<div>
+<p class="font-medium">${project.client === 'Personal Project' && projectId === '4' ? 'Real Club De Regatas & Isastur' : project.client}</p>
+</div>
+<div class="col-span-1">
+<p class="text-gray-500">Herramientas</p>
+<p class="font-medium">Adobe Illustrator</p>
+</div>
+</div>
+</div>
+`;
+html += `
+`;
+detailContent.innerHTML = html;
+// Show detail view with animation
+projectDetail.classList.add('show');
+// Add event listeners to related projects
+document.querySelectorAll('.related-project').forEach(relatedItem => {
+relatedItem.addEventListener('click', function() {
+const relatedId = this.getAttribute('data-project');
+const relatedProject = projectData[relatedId];
+if (relatedProject) {
+// Scroll to top
+projectDetail.scrollTo(0, 0);
+// Update detail view with new project
+// (This would be the same code as above, but for brevity we'll just call this function again)
+const event = new MouseEvent('click', {
+bubbles: true,
+cancelable: true,
+view: window
+});
+document.querySelector(`.masonry-item[data-project="${relatedId}"]`).dispatchEvent(event);
+}
+});
+});
+}
+});
+});
+closeDetail.addEventListener('click', function() {
+projectDetail.classList.remove('show');
+});
+// Helper function to get random related projects
+function getRandomRelatedProjects(currentId) {
+const ids = Object.keys(projectData).filter(id => id !== currentId);
+const shuffled = ids.sort(() => 0.5 - Math.random());
+return shuffled.slice(0, 2);
+}
+});
+</script>
+</body>
+</html>
